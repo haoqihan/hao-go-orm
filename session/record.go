@@ -20,7 +20,7 @@ func (s *Session) Insert(values ...interface{}) (int64, error) {
 	if err != nil {
 		return 0, err
 	}
-	s.CallMethod(AfterQuery, nil)
+	s.CallMethod(AfterInsert, nil)
 	return result.RowsAffected()
 }
 
